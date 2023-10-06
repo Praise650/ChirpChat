@@ -14,10 +14,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('home', 'HomeController@index');
 // Route::get('/home', 'App\Http\Controllers\homeController@index');
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/terms&conditions', function(){
+    return view('terms_conditions');
+});
