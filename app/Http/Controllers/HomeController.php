@@ -13,6 +13,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $idea = new Idea();
+        $idea->content = 'test';
+        $idea->likes = 0;
+        $idea->create();
         $users = [
             [
                 'name'=> "Praise Afuwape",
