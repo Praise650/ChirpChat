@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHomeRequest;
 use App\Http\Requests\UpdateHomeRequest;
 use App\Models\Home;
+use App\Models\Idea;
 
 class HomeController extends Controller
 {
@@ -13,10 +14,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $idea = new Idea();
-        $idea->content = 'test';
-        $idea->likes = 0;
-        $idea->create();
+        $ideas = new Idea();
+        // $idea->post = 'Hello, World! this is Praise voice echoing from the kitchen he nearly burnt because of bug';
+        $ideas->post = "Sorry love, Hope you didn't get injured";
+        $ideas->likes = 1;
+        $ideas->save();
+        // dump(Idea::all());
         $users = [
             [
                 'name'=> "Praise Afuwape",
@@ -30,7 +33,8 @@ class HomeController extends Controller
         return view(
             'home',
             [
-                'users' =>$users
+                'users' =>$users,
+                'ideas' => Idea::orderBy('created_at','DESC')->get(),
             ],
         );
     }
