@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IdeaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,7 @@ use App\Http\Controllers\HomeController;
 // Route::get('home', 'HomeController@index');
 // Route::get('/home', 'App\Http\Controllers\homeController@index');
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/idea', [IdeaController::class, 'store'])->name('idea.create');
 Route::get('/terms&conditions', function(){
     return view('terms_conditions');
 });
