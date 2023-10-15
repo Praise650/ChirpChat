@@ -14,12 +14,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ideas = new Idea();
-        // $idea->post = 'Hello, World! this is Praise voice echoing from the kitchen he nearly burnt because of bug';
-        // $ideas->post = "Sorry love, Hope you didn't get injured";
-        // $ideas->likes = 1;
-        // $ideas->save();
-        // dump(Idea::all());
         $users = [
             [
                 'name'=> "Praise Afuwape",

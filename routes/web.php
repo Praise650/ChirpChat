@@ -21,7 +21,7 @@ use App\Http\Controllers\IdeaController;
 
 // Route::get('home', 'HomeController@index');
 // Route::get('/home', 'App\Http\Controllers\homeController@index');
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('dashboard');
 Route::post('/idea', [IdeaController::class, 'store'])->name('idea.create');
 Route::get('/terms&conditions', function(){
     return view('terms_conditions');
